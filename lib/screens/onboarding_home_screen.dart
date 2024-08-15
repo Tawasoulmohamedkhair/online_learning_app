@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_learning_app/0nboarding/onboarding_easy_learn.dart';
 import 'package:online_learning_app/0nboarding/onboarding_home.dart';
-import 'package:online_learning_app/screens/onboarding_study_plan.dart';
+import 'package:online_learning_app/0nboarding/onboarding_study_plan.dart';
 import 'package:online_learning_app/theme/const_color.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -18,8 +18,11 @@ class _OnboardingHomeScreenState extends State<OnboardingHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Container(
+          width: double.infinity,
+          //  height: double.infinity,
           padding: const EdgeInsets.only(top: 80),
           decoration: BoxDecoration(
             color: navcolor,
@@ -28,14 +31,22 @@ class _OnboardingHomeScreenState extends State<OnboardingHomeScreen> {
           child: Stack(children: [
             PageView(controller: pagecontroller, children: const [
               Center(
-                child: OnboardingHome(),
+                child: Expanded(child: OnboardingHome()),
               ),
               OnbardingEasyLearning(),
               OnboardingStudyPlan(),
             ]),
             Container(
               alignment: const Alignment(0, 0.4),
-              child: SmoothPageIndicator(controller: pagecontroller, count: 3),
+              child: SmoothPageIndicator(
+                controller: pagecontroller,
+                count: 3,
+                effect: const SwapEffect(
+                    activeDotColor: buttoncolor,
+                    dotHeight: 5,
+                    dotWidth: 10,
+                    dotColor: greycolor),
+              ),
             )
           ]),
         ),

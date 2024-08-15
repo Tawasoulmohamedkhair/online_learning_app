@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:online_learning_app/theme/const_color.dart';
+import 'package:online_learning_app/theme/font_style.dart';
 
 Widget skipbutton() {
   return MaterialButton(
     onPressed: () {},
-    child: const Text(
+    child: Text(
       "SKIP",
-      style: TextStyle(color: skipbuttoncolor, fontSize: 20),
+      style: fontstyle400,
     ),
   );
 }

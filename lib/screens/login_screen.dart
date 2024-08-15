@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_learning_app/screens/sign_up.dart';
 import 'package:online_learning_app/theme/const_color.dart';
+import 'package:online_learning_app/theme/font_style.dart';
 import 'package:online_learning_app/widgets/button.dart';
 import 'package:online_learning_app/widgets/my_textfield.dart';
 
@@ -19,6 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
           child: Container(
         padding: const EdgeInsets.only(
@@ -26,26 +29,24 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(
-            color: const Color(0xff1F1F39),
-            borderRadius: BorderRadius.circular(30)),
+        decoration: const BoxDecoration(
+            color: Color(0xff1F1F39),
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30), topRight: Radius.circular(30))),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 25.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 25.0),
               child: Text(
                 textAlign: TextAlign.start,
                 'Login',
-                style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white),
+                style: fontstyle32,
               ),
             ),
-            const SizedBox(
-              height: 25,
+            SizedBox(
+              height: 28.h,
             ),
             Container(
               padding: const EdgeInsets.only(left: 25, right: 25),
@@ -55,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30))),
-              height: 750,
+              height: 530.h,
               child: SingleChildScrollView(
                 padding: const EdgeInsets.only(top: 30),
                 child: Column(
@@ -73,8 +74,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         controller: emailcontroller,
                         hintText: 'Enter Email',
                         obscureText: false),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 5.h,
                     ),
                     MyTextField(
                         suffexicon: IconButton(
@@ -101,23 +102,23 @@ class _LoginScreenState extends State<LoginScreen> {
                           }
                           return null;
                         },
-                        title: 'Your PassWord',
+                        title: ' Password',
                         controller: passwordcontroller,
                         hintText: 'Enter Password',
                         obscureText: true),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 5.h,
                     ),
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text('Forgot Password?',
                             textAlign: TextAlign.end,
-                            style: TextStyle(color: Color(0xffBBBBDC))),
+                            style: fontstyle14),
                       ],
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 20.h,
                     ),
                     MyButton(
                         gradient: const [buttoncolor],
@@ -127,34 +128,31 @@ class _LoginScreenState extends State<LoginScreen> {
                               builder: (context) => const SignUpScreen()));
                           //print('login');
                         }),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 20.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
+                        Text(
                           'Don\'t have an account?',
-                          style: TextStyle(color: Color(0xffBBBBDC)),
+                          style: fontstyle12,
                         ),
-                        const SizedBox(
-                          width: 5,
+                        SizedBox(
+                          width: 5.w,
                         ),
                         InkWell(
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => const SignUpScreen()));
                             },
-                            child: const Text('Sign Up',
-                                style: TextStyle(
-                                  color: Colors.blue,
-                                ))),
+                            child: Text('Sign Up', style: fontstyle)),
                       ],
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 20.h,
                     ),
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -162,41 +160,38 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Divider(
                             thickness: 0.5,
                             color: greycolor,
-                            height: 20,
+                            height: 20.h,
                             indent: 20,
                             endIndent: 20,
                           ),
                         ),
                         Text(
                           'Or Login With',
-                          style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: Color(0xffBBBBDC)),
+                          style: fontstyle12
                         ),
                         Expanded(
                           child: Divider(
                             thickness: 0.5,
                             color: greycolor,
-                            height: 20,
+                            height: 20.h,
                             indent: 20,
                             endIndent: 20,
                           ),
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 30,
+                    SizedBox(
+                      height: 20.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(width: 30, 'assets/images/google.png'),
-                        const SizedBox(
-                          width: 20,
+                        Image.asset(width: 30.w, 'assets/images/google.png'),
+                        SizedBox(
+                          width: 20.w,
                         ),
                         Image.asset(
-                          width: 50,
+                          width: 50.w,
                           'assets/images/facebook.png',
                         ),
                       ],

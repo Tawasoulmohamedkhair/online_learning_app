@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:online_learning_app/screens/login_screen.dart';
+import 'package:online_learning_app/screens/sign_up.dart';
 import 'package:online_learning_app/theme/const_color.dart';
 import 'package:online_learning_app/widgets/button.dart';
 import 'package:online_learning_app/widgets/onboarding.dart';
@@ -18,21 +21,39 @@ class OnboardingStudyPlan extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // ignore: sized_box_for_whitespace
           Container(
-            width: 200,
+            width: 170.w,
             child: MyButton(
-                gradient: const [buttoncolor], onTap: () {}, text: 'Sign Up'),
+                gradient: const [buttoncolor],
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const SignUpScreen(),
+                    ),
+                  );
+                },
+                text: 'Sign Up'),
           ),
           SizedBox(
-            height: 40,
+            height: 40.h,
           ),
+          // ignore: sized_box_for_whitespace
           Container(
-            width: 200,
+            width: 170.w,
             child: MyButton(
-                gradient: const [greycolor], onTap: () {}, text: 'Log in'),
+                gradient: const [greycolor],
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(),
+                    ),
+                  );
+                },
+                text: 'Log in'),
           ),
         ],
       ),
     ]);
   }
-}
+} 

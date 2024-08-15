@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_learning_app/theme/const_color.dart';
+import 'package:online_learning_app/theme/font_style.dart';
 
 // ignore: must_be_immutable
 class MyButton extends StatefulWidget {
@@ -34,8 +35,8 @@ class _MyButtonState extends State<MyButton> {
         child: Center(
             child: Text(
           widget.text,
-          style: const TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),
+
+          style: fontbutton16,
         )),
       ),
     );

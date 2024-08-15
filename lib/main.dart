@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_learning_app/screens/login_screen.dart';
 import 'package:online_learning_app/screens/onboarding_home_screen.dart';
 import 'package:online_learning_app/screens/sign_up.dart';
@@ -12,15 +13,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      routes: {
-        'Login': (context) => const LoginScreen(),
-        'SignUp': (context) => const SignUpScreen(),
-      },
-      debugShowCheckedModeBanner: false,
-      title: 'OnLine Learning App',
-      home: const OnboardingHomeScreen(
-      
+    
+    
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      child: MaterialApp(
+        routes: {
+          'Login': (context) => const LoginScreen(),
+          'SignUp': (context) => const SignUpScreen(),
+        },
+        debugShowCheckedModeBanner: false,
+        title: 'OnLine Learning App',
+        home: const OnboardingHomeScreen(
+        
+        ),
       ),
     );
   }
