@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:online_learning_app/theme/const_color.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:online_learning_app/theme/font_style.dart';
 
 class OnBoarding extends StatelessWidget {
   final Image img;
@@ -16,29 +17,25 @@ class OnBoarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      verticalDirection: VerticalDirection.down,
       children: [
         img,
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: 20.h,
         ),
         Text(
           title1,
-          style: const TextStyle(
-              color: textcolor, fontSize: 22, fontWeight: FontWeight.w700),
+          textAlign: TextAlign.center,
+          style: fontstyle22,
         ),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: 20.h,
         ),
         Text(
           title2,
-          style: const TextStyle(
-            color: whitecolor,
-            fontSize: 16,
-            fontWeight: FontWeight.w300,
-          ),
-        ),
-        const SizedBox(
-          height: 20,
+          style: fontstyle16),
+        SizedBox(
+          height: 20.h,
         ),
       ],
     );

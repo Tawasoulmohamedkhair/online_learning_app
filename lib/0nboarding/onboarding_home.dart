@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_learning_app/widgets/onboarding.dart';
 import 'package:online_learning_app/widgets/skip_button.dart';
 
@@ -11,8 +12,8 @@ class OnboardingHome extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         skipbutton(),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: 20.h,
         ),
         Center(
           child: OnBoarding(

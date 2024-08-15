@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:online_learning_app/theme/font_style.dart';
 
 class MyTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -32,15 +34,17 @@ class MyTextField extends StatelessWidget {
                   textDirection: TextDirection.ltr,
                   textAlign: TextAlign.start,
                   title,
-                  style: const TextStyle(color: Color(0xff858597))),
-              const SizedBox(
-                height: 5,
+                  style: fontstyle14),
+              SizedBox(
+                height: 20.h,
               ),
               TextFormField(
+                
                 validator: validator,
                 controller: controller,
                 obscureText: obscureText,
                 decoration: InputDecoration(
+                  
                   filled: true,
                   fillColor: const Color(0xff3E3E55),
                   enabledBorder: OutlineInputBorder(
